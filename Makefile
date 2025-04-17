@@ -1,1 +1,2 @@
-
+check: list
+    ./list
