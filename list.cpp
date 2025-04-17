@@ -1,4 +1,3 @@
-// this doesnt work on mac, if you use a mac you deserve this
 #include <iostream>
 #include <vector>
 #include <cmath>
