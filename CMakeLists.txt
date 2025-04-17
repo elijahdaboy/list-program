@@ -1,7 +1,3 @@
 cmake_minimum_required(VERSION 3.10)
-
-# Project Name
-project(MyProject CXX)
-
-# Define the executable target
+project(MyProject)
 add_executable(my_executable list.cpp)
