@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y build-essential libssl-dev
     - name: Setup build system
       run: cmake .
     - name: make
@@ -21,8 +23,6 @@ jobs:
       run: make check
     - name: make distcheck
       run: make distcheck
-    - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y build-essential libssl-dev
     - name: Setup C/C++ Compiler
       uses: rlalik/setup-cpp-compiler@v1.2
       with:
