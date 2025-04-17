@@ -19,8 +19,8 @@ int main(){
     std::ifstream file("filename.txt");
     std::string line;
     while (std::getline(file, line)) {
-    mainVector.push_back(line);
-}
+        mainVector.push_back(line);
+    }
     
     while(true){
     std::cout << "What would you like to do?\n1. Add entry\n2. Remove entry\n3. View all entries\n4. Save and exit\n(1, 2, 3 ,4)\n";
@@ -28,17 +28,17 @@ int main(){
     std::cout << '\n';
     
     if (std::cin.fail()) {
-            std::cin.clear(); 
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
-            std::cout << "Invalid input, please enter a number between 1 and 4\n";
-            std::this_thread::sleep_for(std::chrono::milliseconds(1250));
-            #ifdef _WIN32
-                std::system("cls");
-                continue;
-            #elif __linux__
-                std::system("clear");
-                continue;
-            #endif
+        std::cin.clear(); 
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); 
+        std::cout << "Invalid input, please enter a number between 1 and 4\n";
+        std::this_thread::sleep_for(std::chrono::milliseconds(1250));
+        #ifdef _WIN32
+            std::system("cls");
+            continue;
+        #else
+            std::system("clear");
+            continue;
+        #endif
     }
     
     switch(menuOption){
@@ -65,7 +65,7 @@ int main(){
             #ifdef _WIN32
                 std::system("cls");
                 break;
-            #elif __linux__
+            #else
                 std::system("clear");
                 break;
             #endif
@@ -82,7 +82,7 @@ void addEntry(){
     std::this_thread::sleep_for(std::chrono::milliseconds(1250));
     #ifdef _WIN32
         std::system("cls");
-    #elif __linux__
+    #else
         std::system("clear");
     #endif
     
@@ -97,7 +97,7 @@ void removeEntry(){
         std::this_thread::sleep_for(std::chrono::milliseconds(1250));
         #ifdef _WIN32
             std::system("cls");
-        #elif __linux__
+        #else
             std::system("clear");
         #endif
         return;
@@ -116,7 +116,7 @@ void removeEntry(){
         std::this_thread::sleep_for(std::chrono::milliseconds(1250));
     #ifdef _WIN32
         std::system("cls");
-    #elif __linux__
+    #else
         std::system("clear");
     #endif
         return;
@@ -125,7 +125,7 @@ void removeEntry(){
     std::this_thread::sleep_for(std::chrono::milliseconds(1250));
     #ifdef _WIN32
         std::system("cls");
-    #elif __linux__
+    #else
         std::system("clear");
     #endif
     
@@ -139,7 +139,7 @@ void viewEntry(){
         std::this_thread::sleep_for(std::chrono::milliseconds(1250));
     #ifdef _WIN32
         std::system("cls");
-    #elif __linux__
+    #else
         std::system("clear");
     #endif
         return;
@@ -154,7 +154,7 @@ void viewEntry(){
     std::cin.get();
     #ifdef _WIN32
         std::system("cls");
-    #elif __linux__
+    #else
         std::system("clear");
     #endif
     std::cout << '\n';
